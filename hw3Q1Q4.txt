@@ -1,0 +1,33 @@
+Q1
+
+# install stuff for hash calculation
+install.packages("digest", repos='http://cran.us.r-project.org')
+# call the library doing the hashes
+library("digest")
+# now do the hash code calculation
+digest("I learn a lot from this class when I am proper listening to the professor","sha256")
+digest("I do not learn a lot from this class when I am absent and playing on my Iphone","sha256")
+
+
+Q4
+
+#20171017 JSON input from CRIX , trial done in XMN
+
+install.packages("rjson",repos="http://cran.us.r-project.org")
+
+
+library("rjson")
+
+
+json_file = "http://crix.hu-berlin.de/data/crix.json"
+
+
+json_data = fromJSON(file=json_file)
+
+
+crix_data_frame = as.data.frame(json_data)
+
+#plot
+boxplot(
+crix_data_frame)
+
