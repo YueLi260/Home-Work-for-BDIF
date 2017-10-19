@@ -1,0 +1,7 @@
+# install stuff for hash calculation
+install.packages("digest", repos='http://cran.us.r-project.org')
+# call the library doing the hashes
+library("digest")
+# now do the hash code calculation
+digest("I learn a lot from this class when I am proper listening to the professor")
+digest("I do not learn a lot from this class when I am absent and playing on my Iphone")
