@@ -1,0 +1,24 @@
+# Q1
+x = c(1970,1988,1991,1996,1998,2004,2009,2014)
+y = c(262144,2097152,16777216,268435456,10737
+41824,4294967296,8589934592,17179869184)
+plot(x,y)
+
+# Q2
+memory.df = read.csv("memory.csv",header = TRUE)
+plot(memory.df$Byte~memory.df$year)
+splines.reg.l1 = smooth.spline(x = memory.df$year, y = memory.df$Byte, spar = 0.2)
+splines.reg.l2 = smooth.spline(x = memory.df$year, y = memory.df$Byte, spar = 1)
+splines.reg.l3= smooth.spline(x = memory.df$year, y = memory.df$Byte, spar = 2)
+lines(splines.reg.l1, col = "red", lwd = 2)
+lines(splines.reg.l2, col = "green", lwd = 2)
+lines(splines.reg.l3, col = "blue", lwd = 2)
+
+# Q3
+x = 3
+lambda = 2
+dpois(x,lambda) # probability mass function
+
+x = 0
+lambda = 5
+dpois(x,lambda) # probability mass function
